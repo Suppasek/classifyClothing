@@ -1,0 +1,13 @@
+1. create folder img in root of this Project
+2. put image to img folder
+3. yarn
+4. change image src in index.html
+5. yarn watch
+6. pip3 install tensorflow
+7. pip3 install keras
+8. pip3 install Pillow
+9. save image in localhost:1234 after program recognite
+10. put image to img folder
+11. change image src the last line in classify.py 
+12. python3 classify.py
+13. let enjoy it !!!!!!!!!!!!!!!!
