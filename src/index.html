@@ -5,15 +5,25 @@
   <title>BodyPix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <input type="file" id="imageLoader" name="imageLoader" />
-  <img id="preprocess">
-  <canvas id="processed"></canvas>
-  <canvas style="display: none;" id="example"></canvas>
-  <span id="result"></span>
-  <script src="index.js"></script>
+  <h2>Upload Image File</h2>
+  <br/>
+  <br/>
+  <div class="uploader">
+    <input class="imageLoader" type="file" id="imageLoader" name="imageLoader"/>
+    <br/>
+    <br/>
+    <img id="preprocess">
+    <canvas id="processed"></canvas>
+    <canvas style="display: none;" id="example"></canvas>
+    <br/>
+    <br/>
+    <span id="result"></span>
+    <script src="index.js"></script>
+  </div>
 </body>
 
 </html>
