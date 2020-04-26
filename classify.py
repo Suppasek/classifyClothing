@@ -13,7 +13,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 
 def load_image(filename):
 	# load the image
 	img = load_img(filename, grayscale=True, target_size=(28, 28))
-	plt.imshow(img)
+	# plt.imshow(img)
 	plt.show()
 	# convert to array
 	img = img_to_array(img)
@@ -58,10 +58,12 @@ def crop_image(fileName):
 	biggest_contour = max(contour_sizes, key=lambda x: x[0])[1]
 
 	cnt = biggest_contour
-	M = cv2.moments(cnt)
-
+	
 	x,y,w,h = cv2.boundingRect(cnt)
-
+	print(x)
+	print(y)
+	print(w)
+	print(h)
 	#draw contours eiei
 	#img2 = cv2.rectangle(img,(x,y),(x+w,y+h),(200,200,255),4)
 
@@ -92,9 +94,9 @@ def run_example(fileName):
 	result = model.predict(img)
 	predict = model.predict_classes(img)
 	# result = model.predict_classes(img)
-	print(result)
-	print(class_names[np.argmax(result[0])])
+	# print(result)
+	# print(class_names[np.argmax(result[0])])
 	print(class_names[predict[0]])
 
 # entry point, run the example
-run_example('./img/processed_shirt.png')
+run_example('./img/segment_img.jpg')

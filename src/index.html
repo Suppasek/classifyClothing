@@ -2,15 +2,17 @@
 <html>
 
 <head>
-  <title>BodyPix - With a Webcam Demo</title>
+  <title>BodyPix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
 </head>
 
 <body>
-  <img src="../img/trouser.jpeg" id="preprocess">
+  <input type="file" id="imageLoader" name="imageLoader" />
+  <img id="preprocess">
   <canvas id="processed"></canvas>
-  <canvas id="example"></canvas>
+  <canvas style="display: none;" id="example"></canvas>
+  <span id="result"></span>
   <script src="index.js"></script>
 </body>
 
