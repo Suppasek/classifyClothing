@@ -10,19 +10,22 @@
 
 <body>
   <h2>Upload Image File</h2>
-  <br/>
-  <br/>
+  <br />
+  <br />
   <div class="uploader">
-    <div class="buttonHolder">
-      <input class="imageLoader" type="file" id="imageLoader" name="imageLoader"/>
+    <div id="loader-container">
+      <div class="loader"></div>
     </div>
-    <br/>
-    <br/>
+    <div class="buttonHolder">
+      <input class="imageLoader" type="file" id="imageLoader" name="imageLoader" />
+    </div>
+    <br />
+    <br />
     <img id="preprocess">
     <canvas id="processed"></canvas>
     <canvas style="display: none;" id="example"></canvas>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <span id="result"></span>
     <script src="index.js"></script>
   </div>

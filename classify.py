@@ -78,9 +78,27 @@ def crop_image(fileName):
 	# cv2.waitKey(0)
 	# cv2.destroyAllWindows()
 
+def remove_skin(fileName):
+	img = cv2.imread(fileName)
+	min_YCrCb = np.array([0,133,77],np.uint8)
+	max_YCrCb = np.array([235,173,127],np.uint8)
+	converted = cv2.cvtColor(img,cv2.COLOR_BGR2YCR_CB)
+	skinMask = cv2.inRange(converted,min_YCrCb,max_YCrCb)
+	kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
+	skinMask = cv2.erode(skinMask, kernel, iterations = 2)
+	skinMask = cv2.dilate(skinMask, kernel, iterations = 2)
+
+	skinMask = cv2.GaussianBlur(skinMask, (3, 3), 0)
+	mask = cv2.bitwise_not(skinMask)
+	remove_skin = cv2.bitwise_and(img, img, mask=mask)
+
+	cv2.imwrite('./img/remove_skin.png',remove_skin)
+
+
 # load an image and predict the class
 def run_example(fileName):
 
+	#remove_skin(fileName)
 	crop_image(fileName)
 	im = Image.open('./img/cropped.png')
 	

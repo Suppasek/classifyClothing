@@ -3,8 +3,11 @@ import * as bodyPix from '@tensorflow-models/body-pix';
 import axios from 'axios';
 
 const imageLoader = document.getElementById('imageLoader');
-
+const loading = document.getElementById('loader-container');
+const resultText = document.getElementById('result');
 const handleImage = async (e) => {
+  loading.style.display = 'flex';
+
   const net = await bodyPix.load({
     architecture: 'ResNet50',
     outputStride: 32,
@@ -19,13 +22,11 @@ const handleImage = async (e) => {
     img.onload = async () => {
       processed.width = img.width;
       processed.height = img.height;
-      processedCtx.save();
-      processedCtx.globalAlpha = 0.5;
       processedCtx.drawImage(img, 0, 0);
+
       processedCtx.textBaseline = 'middle';
       processedCtx.textAlign = 'center';
       processedCtx.font = '30px Arial';
-      processedCtx.fillText('Loading', img.width/2, img.height/2);
       // const preprocessImg = document.getElementById('preprocess');
       // preprocessImg.style.display = 'none';
 
@@ -48,6 +49,7 @@ const handleImage = async (e) => {
         scoreThreshold: 0.2,
         segmentationThreshold: 0.5,
       });
+      await processedCtx.restore();
       const {data: imgData} = processedCtx.getImageData(0, 0, example.width, example.height);
       const newImg = exampleCtx.createImageData(example.width, example.height);
       const newImgData = newImg.data;
@@ -74,15 +76,16 @@ const handleImage = async (e) => {
           'Content-Type': 'multipart/form-data',
         }});
         const [x, y, w, h, classifyResult] = result.data;
-        processedCtx.restore();
+
         processedCtx.drawImage(img, 0, 0);
         processedCtx.beginPath();
         processedCtx.rect(x, y, w, h);
         processedCtx.strokeStyle = 'red';
         processedCtx.stroke();
 
-        document.getElementById('result').innerHTML = classifyResult;
+        resultText.innerHTML = classifyResult;
       }), 'image/jpeg');
+      loading.style.display = 'none';
     };
     img.src = event.target.result;
   };
