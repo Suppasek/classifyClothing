@@ -21,7 +21,15 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-size: 30px;
   line-height: 1;
-  color: #454cad;
+  color: #104E8B;
+  margin-bottom: 0;
+  text-align: center;
+}
+h4{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #104E8B;
   margin-bottom: 0;
   text-align: center;
 }
@@ -58,7 +66,7 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   line-height: 1;
-  color: #454cad;
+  color: #104E8B;
   margin-bottom: 0;
   text-align: center;
   font-style: border;
@@ -79,6 +87,19 @@ h2 {
     animation: spin 2s linear infinite;
 }
 
+.credit {
+  font-family: "Roboto", sans-serif;
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: lightblue;
+  padding: 2rem;
+  text-align: left;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border-radius: 7px;
+  border: 3px solid #eee;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -88,4 +109,40 @@ h2 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.column-1 {
+  float: left;
+  width: 55%;
+  padding: 10px;
+  text-align: center;
+}
+
+.column-2 {
+  float: left;
+  width: 45%;
+  padding: 10px;
+  text-align: center;
+  color: #000000;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.createdBy{
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a{
+  font-size: 14px;
+  text-decoration: none
+}
+
+.link{
+  color: #000000;
 }
