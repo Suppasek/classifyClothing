@@ -29,7 +29,7 @@ h4{
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1;
-  color: #104E8B;
+  color: #fff;
   margin-bottom: 0;
   text-align: center;
 }
@@ -40,7 +40,6 @@ h4{
   background-color: lightblue;
   padding: 2rem;
   text-align: center;
-  padding: 2rem 1.5rem;
   background: #fff;
   border-radius: 7px;
   border: 3px solid #eee;
@@ -87,17 +86,16 @@ h4{
     animation: spin 2s linear infinite;
 }
 
-.credit {
+.footer {
   font-family: "Roboto", sans-serif;
-  margin-left: 30%;
-  margin-right: 30%;
-  background-color: lightblue;
-  padding: 2rem;
-  text-align: left;
-  padding: 2rem 1.5rem;
-  background: #fff;
-  border-radius: 7px;
-  border: 3px solid #eee;
+  background-color: #26272b;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   /* background-color: red;
+   color: white;
+   text-align: center; */
 }
 
 /* Safari */
@@ -116,6 +114,7 @@ h4{
   width: 55%;
   padding: 10px;
   text-align: center;
+  color: #737373;
 }
 
 .column-2 {
@@ -123,10 +122,8 @@ h4{
   width: 45%;
   padding: 10px;
   text-align: center;
-  color: #000000;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -144,5 +141,5 @@ a{
 }
 
 .link{
-  color: #000000;
+  color: #737373;
 }
