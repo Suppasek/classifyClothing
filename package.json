@@ -16,7 +16,7 @@
     "@tensorflow/tfjs-converter": "~1.7.3",
     "@tensorflow/tfjs-core": "~1.7.3",
     "@tensorflow/tfjs-node": "^1.7.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "blueimp-canvas-to-blob": "^3.20.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
